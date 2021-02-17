@@ -10,6 +10,7 @@ const passport = require("passport");
 
 const initializePassport = require("./passport_config");
 const flash = require("connect-flash");
+const mongoSanitize = require('express-mongo-sanitize');
 
 
 
@@ -52,6 +53,9 @@ app.use(express.static(path.join(__dirname,"public")))
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
+
+app.use(mongoSanitize())
+
 app.engine("hbs", handlebars.engine);
 app.set("view engine", "hbs");
 
