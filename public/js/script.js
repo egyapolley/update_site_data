@@ -129,6 +129,7 @@ $(function () {
             editElements.forEach(function (editElement) {
                 editElement.addEventListener("click", function (event) {
                     showLinkBox("edit_site");
+                    resetEditForm();
                     addOptionSelectEdit();
                     let siteId =editElement.dataset.siteid;
                     let index = window.site_data.findIndex(data =>data.site_id ===siteId );
