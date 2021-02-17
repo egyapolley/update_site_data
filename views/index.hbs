@@ -1,0 +1,161 @@
+
+<div class="body-container">
+    <div class="banner" id="banner">
+        <div class="prompt" id="prompt">
+            <h3><i class="fas fa-exclamation-triangle"></i>&nbsp;&nbsp;ALERT</h3>
+            <div class="message-box-container" id="message-box-container">
+                <div class="error-box" id="error-box-delete">
+                    <button  class="times-button">&times;</button>
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <small></small>
+                </div>
+
+                <div class="success-box" id="success-box-delete">
+                    <button class="times-button">&times;</button>
+                    <i class="fas fa-thumbs-up"></i>
+                    <small>SUCCESS</small>
+                </div>
+                <div class="message-box" id="message-box">
+                </div>
+                <div id="progressIndicator-delete" class="progressIndicator">
+                    <img src="/images/ajax-loader.gif" alt="Processing">
+                </div>
+
+                <div class="button-group">
+                    <button id="cancel-btn"  class="cancel-btn">Cancel</button>
+                    <button id="proceed-btn" class="proceed-btn">Proceed</button>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+  <header>
+      <div class="logout-container">
+          <a href=/logout><i class="fas fa-power-off"></i>&nbsp;LogOut</a>
+      </div>
+
+    <nav>
+        <ul id="nav-list-group"  class="nav-list-group">
+            <li class="nav-list-group__item view_all_sites"><a id="view_all_sites" class="nav-link" href="">View All Sites</a></li>
+            <li class="nav-list-group__item add_new_site"><a id="add_new_site" class="nav-link" href="">Add New Site</a></li>
+            <li class="nav-list-group__item edit_site"><a id="edit_site" class="nav-link" href="">Edit Site</a></li>
+        </ul>
+    </nav>
+  </header>
+    <main>
+        <div class="main-container">
+            <div class="view_all_sites link-box">
+                <table class="view-allSites-table">
+                  <tbody id="view-allSites-tbody">
+
+                  </tbody>
+                </table>
+
+
+            </div>
+            <div class="add_new_site link-box">
+                <div class="form-container">
+                    <div class="error-box" id="error-box-add">
+                        <button  class="times-button">&times;</button>
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <small></small>
+                    </div>
+
+                    <div class="success-box" id="success-box-add">
+                        <button class="times-button">&times;</button>
+                        <i class="fas fa-thumbs-up"></i>
+                        <small>SUCCESS</small>
+                    </div>
+                    <form action="" id="add_site_form">
+                        <div class="form-group">
+                            <label for="site_id">Site ID:</label>
+                            <input type="text" id="site_id" required minlength="3" maxlength="200">
+                        </div>
+                        <div class="form-group">
+                            <label for="site_name">Site Name:</label>
+                            <input type="text" id="site_name" required minlength="3" maxlength="200">
+                        </div>
+                        <div class="form-group">
+                            <label for="site_lat">Site Loc. Latitude:</label>
+                            <input type="text" id="site_lat" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="site_long">Site Loc. Longitude:</label>
+                            <input type="text" id="site_long" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="site_status">Site Status:</label>
+                            <select name="" id="site_status" required>
+                                <option value="online">In-Service</option>
+                                <option value="offline">Out-Of-Service</option>
+                            </select>
+                        </div>
+                        <div id="progressIndicator-add" class="progressIndicator">
+                            <img src="/images/ajax-loader.gif" alt="Processing">
+                        </div>
+                        <div class="form-group-btn">
+                            <button class="btn" type="submit">Save</button>
+                        </div>
+
+                    </form>
+                </div>
+
+
+            </div>
+            <div class="edit_site link-box">
+                <div class="form-container">
+                    <div class="error-box" id="error-box-edit">
+                        <button  class="times-button">&times;</button>
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <small></small>
+                    </div>
+
+                    <div class="success-box" id="success-box-edit">
+                        <button class="times-button">&times;</button>
+                        <i class="fas fa-thumbs-up"></i>
+                        <small>SUCCESS</small>
+                    </div>
+                    <form action="" id="edit_site_form">
+                        <div class="form-group">
+                            <label for="site_id_edit">Site ID:</label>
+                            <select name="" id="site_id_edit" required>
+
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="site_name_edit">Site Name:</label>
+                            <input type="text" id="site_name_edit" required minlength="3" maxlength="200">
+                        </div>
+                        <div class="form-group">
+                            <label for="site_lat_edit">Site Loc. Latitude:</label>
+                            <input type="text" id="site_lat_edit" required minlength="1" maxlength="20">
+                        </div>
+                        <div class="form-group">
+                            <label for="site_long_edit">Site Loc. Longitude:</label>
+                            <input type="text" id="site_long_edit" required minlength="1" maxlength="20" >
+                        </div>
+                        <div class="form-group">
+                            <label for="site_status_edit">Site Status:</label>
+                            <select name="" id="site_status_edit" required>
+                                <option value=""></option>
+                                <option value="online">In-Service</option>
+                                <option value="offline">Out-Of-Service</option>
+                            </select>
+                        </div>
+                        <div id="progressIndicator-edit" class="progressIndicator">
+                            <img src="/images/ajax-loader.gif" alt="Processing">
+                        </div>
+                        <div class="form-group-btn">
+                            <button class="btn" type="submit">Save</button>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+</div>
