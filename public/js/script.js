@@ -9,6 +9,8 @@ $(function () {
     const site_loc_long_Edit = document.getElementById("site_long_edit");
     const site_status_Edit = document.getElementById("site_status_edit");
 
+    const progressbar = document.getElementById("progressbar");
+
 
 
     const addLink = document.getElementById("add_new_site");
@@ -269,6 +271,7 @@ $(function () {
     }
 
     function getData() {
+        progressbar.style.display="block";
         $.get("/site_data")
             .done(function (data) {
                 if (data.status ===0 && data.dataSet.length>0){
@@ -298,6 +301,7 @@ $(function () {
                             tableRows+=tableRow;
                         })
                         const tableBody = document.getElementById("view-allSites-tbody");
+                        progressbar.style.display="none"
                         tableBody.innerHTML = tableRows;
                         showLinkBox("view_all_sites");
                         addListenerEdits();
@@ -308,7 +312,8 @@ $(function () {
                 }
 
             }).fail(function (error) {
-            console.log(error)
+            console.log(error);
+            progressbar.style.display="none"
         })
 
 
